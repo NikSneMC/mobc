@@ -29,7 +29,7 @@ impl Manager for RedisConnectionManager {
     async fn check(&self, mut conn: Self::Connection) -> Result<Self::Connection, Self::Error> {
         let pong: String = redis::cmd("PING").query_async(&mut conn).await?;
         if pong.as_str() != "PONG" {
-            return Err((ErrorKind::ResponseError, "pong response error").into());
+            return Err((ErrorKind::Parse, "pong response error").into());
         }
         Ok(conn)
     }
