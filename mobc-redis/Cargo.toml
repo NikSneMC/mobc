@@ -15,7 +15,7 @@ keywords = ["redis", "pool", "async", "await"]
 
 [dependencies]
 mobc = { version = "0.9", path = ".." }
-redis = { version = "1.0" }
+redis = { version = "1.5" }
 
 [features]
 default = ["mobc/tokio", "redis/tokio-comp"]
